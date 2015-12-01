@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="commons-codec-1.9.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/joe321/.m2/repository/com/typesafe/config/1.2.1/config-1.2.1-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/joe321/.m2/repository/com/typesafe/config/1.2.1/config-1.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
