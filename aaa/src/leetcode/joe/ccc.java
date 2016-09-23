@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+
 public class ccc {
 
     private static class ID {
@@ -86,7 +89,7 @@ public class ccc {
      */
     public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, IntrospectionException, InvocationTargetException {
 
-
+/*
         Data data = new Data();
         data.setId(1);
         data.setDesc("description");
@@ -105,7 +108,7 @@ public class ccc {
             Object obj = m.invoke(data,  new Object[] {} );
             System.out.println(obj.toString());
         }
-
+*/
         /*
         for (Field f: data.getClass().getFields()) {
             f.setAccessible(true);
@@ -121,6 +124,19 @@ public class ccc {
         BigData<Nested> bigdata = new BigData<Nested>(input);
         bigdata.printTemplateClassName();
         */
+
+        try {
+            JSONObject responseData = new JSONObject(
+                    "{\"aaa\" : FALSE}"
+                );
+            boolean x = responseData.getBoolean("aaa");
+            System.out.println(x);
+        } catch (JSONException e) {
+            // TODO 自動產生的 catch 區塊
+            e.printStackTrace();
+        }
+
+
     }
 
 }
