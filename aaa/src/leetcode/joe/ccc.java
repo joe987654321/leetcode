@@ -15,9 +15,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+import com.typesafe.config.ConfigList;
+import com.typesafe.config.ConfigObject;
+import com.typesafe.config.ConfigValue;
 
 public class ccc {
 
@@ -124,7 +131,7 @@ public class ccc {
         BigData<Nested> bigdata = new BigData<Nested>(input);
         bigdata.printTemplateClassName();
         */
-
+/*
         try {
             JSONObject responseData = new JSONObject(
                     "{\"aaa\" : FALSE}"
@@ -135,7 +142,34 @@ public class ccc {
             // TODO 自動產生的 catch 區塊
             e.printStackTrace();
         }
+*/
+/*
+        Config c = ConfigFactory.parseString("title = [ {name=t1, n1=123, n2=999} , {name=t2, n1=456, n2=888}, {name=s1}, {name=s2} ]");
 
+        for (Config c2: c.getConfigList("title")) {
+            if (c2.getString("name").startsWith("t")) {
+                System.out.println(c2.getString("n1"));
+            }
+        }
+*/
+        /*
+        for (Config c2: c.getConfigList("title")) {
+            if (c2.getString("name").startsWith("t")) {
+                System.out.println(c2.getString("n1"));
+            }
+        }
+        */
+
+        Config c = ConfigFactory.parseString("title { t1 { n1=123, n2=999} ,  t2 { n1=456, n2=888}, s1 {}, s2 {} }");
+
+        ConfigObject c2 = c.getObject("title");
+        for (String a : c2.keySet()){
+            System.out.println(a);
+        }
+
+        System.out.println(c2);
+        System.out.println(c2.toConfig());
+        System.out.println(c2.toConfig().root());
 
     }
 
