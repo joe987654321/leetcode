@@ -13,16 +13,27 @@ public class InjectTest {
     public static class BBBImpl implements BBB {
         @Override
         public void printHello() {
-            System.out.println("hello");
+            System.out.println("B hello");
         }
 
     }
 
+    public static class CCC {
+        public void printHello() {
+            System.out.println("C hello");
+        }
+    }
+
     public static class AAA {
         @Inject private BBB bbb;
+        @Inject private CCC ccc;
 
         public void useBPrint() {
             bbb.printHello();
+        }
+
+        public void useCPrint() {
+            ccc.printHello();
         }
     }
 
@@ -36,5 +47,6 @@ public class InjectTest {
     public static void main(String[] args) {
         AAA aaa = Guice.createInjector(new Moduleee()).getInstance(AAA.class);
         aaa.useBPrint();
+        aaa.useCPrint();
     }
 }
