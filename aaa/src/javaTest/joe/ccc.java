@@ -1,4 +1,4 @@
-package leetcode.joe;
+package javaTest.joe;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;

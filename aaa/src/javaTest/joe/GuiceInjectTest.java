@@ -1,10 +1,10 @@
-package leetcode.joe;
+package javaTest.joe;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.AbstractModule;;
 
-public class InjectTest {
+public class GuiceInjectTest {
 
     public static interface BBB {
         public void printHello();
