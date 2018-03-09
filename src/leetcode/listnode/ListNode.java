@@ -27,4 +27,3 @@ public class ListNode {
         System.out.println("null");
     }
 }
-
