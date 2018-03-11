@@ -42,6 +42,6 @@ public class RemoveDuplicatesFromSortedList {
 
         ListNode head = getTestList(a);
         ListNode out = removeDuplicatesFromSortedList.deleteDuplicates(head);
-        ListNode.printList(out);
+        ListNode.print(out);
     }
 }
