@@ -5,18 +5,12 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Stack;
 
+import leetcode.treenode.TreeNode;
+
 /**
  * Created by joe321 on 2017/5/23.
  */
 public class LowestCommonAncestor {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
 
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

@@ -3,16 +3,9 @@ package leetcode.joe;
 import java.util.ArrayList;
 import java.util.List;
 
+import leetcode.treenode.TreeNode;
+
 public class BinaryTreeTraversal {
-    /**
-     * Definition for a binary tree node.
-    */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public static class Solution {
         public List<Integer> inorderTraversal(TreeNode root) {

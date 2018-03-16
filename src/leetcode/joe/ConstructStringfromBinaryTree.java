@@ -1,15 +1,11 @@
 package leetcode.joe;
 
+import leetcode.treenode.TreeNode;
+
 /**
  * Created by Joe on 2017/6/4.
  */
 public class ConstructStringfromBinaryTree {
-    public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-    }
 
     private String construct(TreeNode t) {
         if (t==null) {

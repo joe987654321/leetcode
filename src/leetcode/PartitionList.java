@@ -18,12 +18,12 @@ public class PartitionList {
         ln4.next = ln5;
         ln5.next = ln6;
 
-        ListNode.printList(ln1);
+        ListNode.print(ln1);
 
         PartitionList partitionList = new PartitionList();
         ListNode newRoot = partitionList.partition(ln1,3);
 
-        ListNode.printList(newRoot);
+        ListNode.print(newRoot);
     }
 
     public ListNode partition(ListNode head, int x) {

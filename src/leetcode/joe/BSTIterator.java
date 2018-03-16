@@ -2,14 +2,9 @@ package leetcode.joe;
 
 import java.util.Stack;
 
-public class BSTIterator {
+import leetcode.treenode.TreeNode;
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; left = null; right = null; }
-    }
+public class BSTIterator {
 
     Stack<TreeNode> stack;
 
@@ -43,14 +38,14 @@ public class BSTIterator {
 
     public static void main(String[] args) {
 
-        BSTIterator.TreeNode tn1 = new BSTIterator.TreeNode(1);
-        BSTIterator.TreeNode tn2 = new BSTIterator.TreeNode(2);
-        BSTIterator.TreeNode tn3 = new BSTIterator.TreeNode(3);
-        BSTIterator.TreeNode tn4 = new BSTIterator.TreeNode(4);
-        BSTIterator.TreeNode tn5 = new BSTIterator.TreeNode(5);
-        BSTIterator.TreeNode tn6 = new BSTIterator.TreeNode(6);
-        BSTIterator.TreeNode tn7 = new BSTIterator.TreeNode(7);
-        BSTIterator.TreeNode tn8 = new BSTIterator.TreeNode(8);
+        TreeNode tn1 = new TreeNode(1);
+        TreeNode tn2 = new TreeNode(2);
+        TreeNode tn3 = new TreeNode(3);
+        TreeNode tn4 = new TreeNode(4);
+        TreeNode tn5 = new TreeNode(5);
+        TreeNode tn6 = new TreeNode(6);
+        TreeNode tn7 = new TreeNode(7);
+        TreeNode tn8 = new TreeNode(8);
         tn3.left = tn2;
         tn2.left = tn1;
         tn3.right = tn6;

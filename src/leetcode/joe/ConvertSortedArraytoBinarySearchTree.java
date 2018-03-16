@@ -1,16 +1,11 @@
 package leetcode.joe;
 
+import leetcode.treenode.TreeNode;
+
 /**
  * Created by joe321 on 2017/1/9.
  */
 public class ConvertSortedArraytoBinarySearchTree {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     private TreeNode BST(int [] nums, int start, int end) {
         if (end < start) {

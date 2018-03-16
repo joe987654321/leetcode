@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BinaryTreerightSideview {
+import leetcode.treenode.TreeNode;
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-    }
+public class BinaryTreerightSideview {
 
     public class Solution {
 

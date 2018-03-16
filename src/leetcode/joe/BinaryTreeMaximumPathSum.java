@@ -2,16 +2,12 @@ package leetcode.joe;
 
 import java.util.Arrays;
 
+import leetcode.treenode.TreeNode;
+
 /**
  * Created by joe321 on 2016/12/30.
  */
 public class BinaryTreeMaximumPathSum {
-    public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-    }
 
     private int [] recursiveFindMax(TreeNode node) {
         int rightPathMax = 0;
