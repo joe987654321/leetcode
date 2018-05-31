@@ -2,13 +2,44 @@ package leetcode.treenode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
+
+    public static TreeNode createTree(Integer [] input) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root = new TreeNode(input[0]);
+        queue.add(root);
+        for (int i = 1; i < input.length; i++) {
+            TreeNode top = queue.peek();
+            if (input[i] != null) {
+                if (top == null) {
+                    throw new RuntimeException("invalid input");
+                }
+                TreeNode n = new TreeNode(input[i]);
+                if (i % 2 == 1) {
+                    top.left = n;
+                } else {
+
+                    top.right = n;
+                    queue.poll();
+                }
+                queue.add(n);
+            } else {
+                if (i % 2 == 0) {
+                    queue.poll();
+                }
+                queue.add(null);
+            }
+        }
+        return root;
+    }
 
     public static void printTreeStraight(TreeNode root) {
         if (root == null) {
