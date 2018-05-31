@@ -13,6 +13,12 @@ public class TreeNode {
     public TreeNode(int x) { val = x; }
 
     public static TreeNode createTree(Integer [] input) {
+        if (input.length == 0) {
+            throw new RuntimeException("invalid input");
+        }
+        if (input.length == 1 && input[0] == null) {
+            return null;
+        }
         Queue<TreeNode> queue = new LinkedList<>();
         TreeNode root = new TreeNode(input[0]);
         queue.add(root);
@@ -26,7 +32,6 @@ public class TreeNode {
                 if (i % 2 == 1) {
                     top.left = n;
                 } else {
-
                     top.right = n;
                     queue.poll();
                 }
