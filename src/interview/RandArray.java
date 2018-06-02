@@ -1,20 +1,16 @@
 package interview;
 
+import java.util.Arrays;
+
 public class RandArray {
     public static int [] getRandArray(int n) {
-        int [] ret = new int[n];
+        int [] a = new int[n];
         for (int i = 0; i < n; i++) {
-            ret[i] = i;
+            int targetIndex = (int)(Math.random()*(i+1));
+            a[i] = a[targetIndex];
+            a[targetIndex] = i;
         }
 
-        //Rand
-        for (int i = 1; i < n; i++) {
-            int randIndex = (int)(Math.random() * i);
-            int tmp = ret[randIndex];
-            ret[randIndex] = ret[i];
-            ret[i] = tmp;
-        }
-
-        return ret;
+        return a;
     }
 }
