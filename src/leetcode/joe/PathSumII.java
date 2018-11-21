@@ -21,7 +21,7 @@ public class PathSumII {
         return ret;
     }
 
-    public void _pathSum(List<List<Integer>> ret, List<Integer> now, TreeNode root, int sum) {
+    private void _pathSum(List<List<Integer>> ret, List<Integer> now, TreeNode root, int sum) {
         if (root == null) {
             return;
         }
