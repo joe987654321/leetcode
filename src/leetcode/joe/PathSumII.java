@@ -8,7 +8,7 @@ import java.util.List;
 public class PathSumII {
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.createTree(new Integer[]{5,4,8,11,null,13,4,7,2,null,null,null,null,5,1});
+        TreeNode root = TreeNode.createTree(new Integer[]{5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, 5, 1});
         TreeNode.printTree(root);
         PathSumII pathSumII = new PathSumII();
         List<List<Integer>> lists = pathSumII.pathSum(root, 22);
@@ -33,6 +33,6 @@ public class PathSumII {
             _pathSum(ret, now, root.right, sum - root.val);
             _pathSum(ret, now, root.left, sum - root.val);
         }
-        now.remove(now.size()-1);
+        now.remove(now.size() - 1);
     }
 }
