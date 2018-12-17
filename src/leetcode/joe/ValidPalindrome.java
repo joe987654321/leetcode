@@ -15,15 +15,15 @@ public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         char[] chars = s.toCharArray();
         int start = 0;
-        int end = chars.length-1;
+        int end = chars.length - 1;
         while (start < end) {
-            while(!Character.isLetterOrDigit(chars[start])) {
+            while (!Character.isLetterOrDigit(chars[start])) {
                 start++;
                 if (start >= end) {
                     return true;
                 }
             }
-            while(!Character.isLetterOrDigit(chars[end])) {
+            while (!Character.isLetterOrDigit(chars[end])) {
                 end--;
                 if (start >= end) {
                     return true;
