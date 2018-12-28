@@ -1,6 +1,10 @@
 package leetcode.treelinknode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class TreeLinkNode {
     public int val;
@@ -136,26 +140,4 @@ public class TreeLinkNode {
 
         return true;
     }
-
-//    public static void printTree(TreeNode root) {
-//        printTree(root, "", true);
-//    }
-//
-//    private static void printTree(TreeNode root, String prefix, boolean isTail) {
-//        System.out.println(prefix + (isTail ? "└── " : "├── ") + root.val);
-//        List<TreeNode> children = new ArrayList<>();
-//        if (root.right != null) {
-//            children.add(root.right);
-//        }
-//        if (root.left != null) {
-//            children.add(root.left);
-//        }
-//
-//        for (int i = 0; i < children.size() - 1; i++) {
-//            printTree(children.get(i), prefix + (isTail ? "    " : "│   "), false);
-//        }
-//        if (children.size() > 0) {
-//            printTree(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true);
-//        }
-//    }
 }
