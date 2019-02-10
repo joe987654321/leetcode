@@ -1,9 +1,9 @@
 package leetcode.practice;
 
-public class CountAndSay {
+public class _038CountAndSay {
     public static void main(String[] args) {
-        CountAndSay countAndSay = new CountAndSay();
-        String s = countAndSay.countAndSay(4);
+        _038CountAndSay a038CountAndSay = new _038CountAndSay();
+        String s = a038CountAndSay.countAndSay(4);
         System.out.println(s);
     }
 
