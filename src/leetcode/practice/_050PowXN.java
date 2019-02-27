@@ -28,7 +28,7 @@ public class _050PowXN {
         }
         long nn = n;
         boolean sign = true;
-        if (nn <0) {
+        if (nn < 0) {
             nn = -nn;
             sign = false;
         }
@@ -37,20 +37,20 @@ public class _050PowXN {
         while (count <= nn) {
             list.add(x);
             x *= x;
-            count*=2;
+            count *= 2;
         }
-        count/=2;
+        count /= 2;
         int indexFromTail = 0;
         double ret = 1;
-        while(nn != 0) {
+        while (nn != 0) {
             if (nn >= count) {
-                ret *= list.get(list.size()-1-indexFromTail);
-                nn-=count;
+                ret *= list.get(list.size() - 1 - indexFromTail);
+                nn -= count;
             }
-            count/=2;
+            count /= 2;
             indexFromTail++;
         }
-        return sign ? ret : 1/ret;
+        return sign ? ret : 1 / ret;
     }
 
 }
