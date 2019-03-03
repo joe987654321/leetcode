@@ -5,80 +5,32 @@ package leetcode.joe;
  */
 public class NonnegativeIntegersWithoutConsecutiveOnes {
 
-    public int [][] setA() {
-        int [][] A = new int[32][2];
-        A[0][0] = 1;
-        A[0][1] = 1;
-        for (int i=1;i<32;i++) {
-            A[i][0] = A[i-1][0] + A[i-1][1];
-            A[i][1] = A[i-1][0];
-        }
-        return A;
+    public static void main(String[] args) {
+        NonnegativeIntegersWithoutConsecutiveOnes n = new NonnegativeIntegersWithoutConsecutiveOnes();
+        int integers = n.findIntegers(100);
+        System.out.println(integers);
     }
 
     public int findIntegers(int num) {
-        int [][] A = setA();
-//        for (int i = 0; i < 32; i++) {
-//            System.out.println(i + " : " + A[i][0] + "," + A[i][1]);
-//        }
-
-        return count(num, A);
-//        return 0;
-    }
-
-    private int count(int num, int [][] A) {
-        if (num == 0) {
-            return 1;
+        if (num == 1) return 2;
+        StringBuilder sb = new StringBuilder();
+        while (num != 0) {
+            sb.append(num%2);
+            num/=2;
         }
-        if (num == 1) {
-            return 2;
+        int len = sb.length();
+        int [] ones = new int[len];
+        int [] zeros = new int[len];
+        ones[0] = zeros[0] = 1;
+        for (int i = 1; i < len; i++) {
+            zeros[i] = zeros[i-1] + ones[i-1];
+            ones[i] = zeros[i-1];
         }
-
-//        System.out.println(num);
-        int a = 1 << 30;
-        int maxDigit = 31;
-        for (int i = 0; i < 30; i++) {
-            if ((num & a) != 0) {
-                break;
-            }
-            a = a>>1;
-            maxDigit--;
+        int sum = ones[len-1]+zeros[len-1];
+        for (int i = len-2; i >= 0 ; i--) {
+            if (sb.charAt(i+1) == '1' && sb.charAt(i) == '1') break;
+            else if (sb.charAt(i+1) == '0' && sb.charAt(i) == '0') sum-=ones[i];
         }
-//        System.out.println(maxDigit);
-//        System.out.println(a);
-//        System.out.println("* " + (num-a));
-//        int tobeDelete = a;
-//        a = a >> 1;
-//        if ((num & a) != 0) {
-//            tobeDelete += a;
-//        }
-//        while(true) {
-//            if ((num & a) != 0) {
-//                tobeDelete += a;
-//            } else {
-//                break;
-//            }
-//            a = a >> 1;
-//        }
-//        System.out.println("tobeDelete " + tobeDelete);
-
-        int tobeDelete = a;
-        a = a >> 1;
-        if ((num & a) != 0) {
-            return A[maxDigit - 2][0] + A[maxDigit - 2][1] + count(a-1, A);
-        } else {
-            return A[maxDigit - 2][0] + A[maxDigit - 2][1] + count(num - tobeDelete, A);
-        }
-    }
-
-    public static void main(String[] args) {
-        NonnegativeIntegersWithoutConsecutiveOnes nonnegativeIntegersWithoutConsecutiveOnes =
-            new NonnegativeIntegersWithoutConsecutiveOnes();
-        int a = 38;
-        for (int i = 0; i <20 ; i++) {
-            System.out.println(nonnegativeIntegersWithoutConsecutiveOnes.findIntegers(i));
-        }
-        int b  = nonnegativeIntegersWithoutConsecutiveOnes.findIntegers(a);
-        System.out.println(b);
+        return sum;
     }
 }
